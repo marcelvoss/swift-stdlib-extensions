@@ -17,27 +17,14 @@ import Foundation
 #endif
 
 extension String {
-    var hasOneCharacter: Bool {
-        return count == 1
-    }
-    
-    var containsOnlyNumbers: Bool {
-        let numbers = (0...9).map(String.init)
-        return !contains { !numbers.contains(String($0)) }
+    var isFacepalm: Bool {
+        return self == "🤦‍♂️"
     }
 }
 
 extension Int {
-    var isEven: Bool {
-        return self % 2 == 0
-    }
-    
-    var isOdd: Bool {
-        return !isEven
-    }
-    
-    var isPrimeNumber: Bool {
-        return self > 1 && !(2..<self).contains { self % $0 == 0 }
+    var is42: Bool {
+        return self == 42
     }
 }
 
@@ -50,9 +37,27 @@ extension Date {
     }
 }
 
+
 extension Color {
     var isHappy: Bool {
         return self != .black
+    }
+    
+    var isSad: Bool {
+        return true
+    }
+}
+
+extension Int {
+    // Sorry, even numbers :/
+    mutating func makeCool() {
+        if self % 2 != 0 {
+            self += 1
+        }
+    }
+    
+    mutating func makeAwesome() {
+        self = 73
     }
 }
 
