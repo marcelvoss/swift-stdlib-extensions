@@ -33,7 +33,7 @@ extension Date {
     var isMyBirthday: Bool {
         let components = Calendar.current.dateComponents([.year, .month, .day], from: self)
         
-        return components.year == 1998 && components.month == 6 && components.day == 2
+        return components.day == 2 && components.month != nil && [2, 6, 10].contains(components.month!)
     }
 }
 
